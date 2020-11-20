@@ -29,7 +29,9 @@ namespace PartsUnlimited
             app.CreatePerOwinContext(() => Global.UnityContainer.Resolve<IPartsUnlimitedContext>());
             app.CreatePerOwinContext<UserManager<ApplicationUser>>(CreateUserManager);
             app.CreatePerOwinContext<SignInManager<ApplicationUser, string>>(CreateSignInManager);
-
+            private static String STRIPE_API_KEY = "sk_live_devboxacct1DfwS2ClCIKljW";
+	        private static String GOCARDLESS_API_KEY = "live_AlN-kpH1H4wGhpLgmwm5kg15snC6nVfL05tHSXRB";
+            
             ConfigureCookieAuth(app);
             ConfigureLoginProviders(app);
             ConfigureSignalR(app);
